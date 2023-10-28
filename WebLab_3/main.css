@@ -57,12 +57,34 @@ header {
     background: #00001E;
     justify-content: center;
     box-shadow: 5px 5px 5px grey;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+@media screen and  (max-width: 1500px)  {
+     #main-idea {
+        display: none;
+    }
+    .phone-data {
+        display: none;
+    }
+
+
+}
+@media screen and  (max-width: 1000px)  {
+   #logo {
+       display: none;
+   }
+
+
 }
 main {
     min-height: 100%;
     flex: 1 1 auto;
 }
+
 .main_head {
+    flex-direction: row;
     display:flex;
     align-items:center;
     justify-content:space-evenly;
@@ -71,6 +93,9 @@ main {
     padding: 5px;
     max-height: 65px;
     float:left;
+    position: fixed;
+    top: 0;
+
 }
 .nav_menu #phone{
     display: inline-block;
@@ -97,41 +122,56 @@ main {
     color: whitesmoke;
     font-size: 27px;
     text-decoration: none;
-
 }
 .panel {
     display:flex;
     width: auto;
-    margin: 40px 10% 40px;
+    margin: 100px 10% 40px;
     background: white;
     height: 120px;
     box-shadow: 5px 5px 5px grey;
     border: 1px solid grey;
     border-radius: 25px;
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .panel_item {
     display: inline-block;
     margin: 10px;
     padding: 10px;
+
 }
 .textColor_1 {
     color: Black;
     font-size: 27px;
     font-weight: bolder;
+    text-align: center;
+    padding: 5px;
 }
-.panel_pictures {
-    max-height: 400px;
-    max-width: 400px;
+@media screen and  (max-width: 1200px) {
+    .textColor_1 {
+        font-size: 20px;
+    }
 }
-.galery {
-    display:flex;
-    align-items:center;
-    justify-content:space-evenly;
-    margin: 15px;
 
+.panel_pictures {
+    max-height: 200px;
+    max-width: 400px;
+    margin: 10px 10px 10px;
+}
+
+.galery {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    align-items:center;
+    margin: 15px;
+}
+@media screen and  (max-width: 1230px) {
+    .galery{
+        grid-template-columns: auto auto;
+    }
 }
 article {
     display:flex;
@@ -139,21 +179,27 @@ article {
     margin: 20px;
 }
 .galery_item {
+    align-self: center;
     display: inline-block;
-    margin: 10px;
+    margin:  10px auto 10px;
     padding: 20px;
     font-weight: bolder;
     font-size: 20px;
 }
+.galery_item:nth-child(6n+1),.galery_item:nth-child(6n+2),.galery_item:nth-child(6n+3)  {
+    color: grey;
+}
+
+
 footer {
     width: 100%;
     height: auto;
     background: #00001E;
     position: absolute;
     flex: 0 0 auto;
-
 }
 .footer_main {
+    width: 100%;
     display:flex;
     flex-direction: column;
     align-items: normal;
