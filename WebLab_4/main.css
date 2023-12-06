@@ -46,6 +46,16 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+.snow-animation-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
 html,
 body {
     height: 100%;
@@ -61,6 +71,7 @@ header {
     top: 0;
     z-index: 1000;
 }
+
 @media screen and  (max-width: 1500px)  {
      #main-idea {
         display: none;
@@ -82,7 +93,59 @@ main {
     min-height: 100%;
     flex: 1 1 auto;
 }
+.contact-main {
+    width: auto;
+    margin: 10% auto auto 10%;
+    align-items: center;
+    height: 120px;
+    position: absolute;
+    font-size: 37px;
+}
+.aboutus-main {
+    width: auto;
+    margin: 10% auto auto 10%;
+    align-items: center;
+    height: 120px;
+    position: absolute;
+    font-size: 37px;
+}
+.aboutus-main h1::after{
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 34%;
+    min-width: 300px;
+    height: 1px;
+    background: green;
+}
+.contact-main h1::after {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 34%;
+    min-width: 300px;
+    height: 1px;
+    background: green;
+}
 
+.contact-panels{
+    margin: 50px 0 50px;
+}
+.contact-item {
+    margin: 0 0 25px;
+    display: block;
+    vertical-align: top;
+    color: #555;
+    font-size: 34px;
+    line-height: 28px;
+    font-weight: 400;
+}
+.contact-imgs {
+    height: 25px;
+    width: 25px;
+}
 .main_head {
     flex-direction: row;
     display:flex;
@@ -110,6 +173,10 @@ main {
 .textColor {
     color: whitesmoke;
     font-size: 27px;
+
+}
+.contact-data:active {
+    color: #b2a6eb;
 }
 #main-idea {
     color: whitesmoke;
@@ -117,6 +184,15 @@ main {
     float: right;
     margin: 20px 5px 5px;
     padding: 0px 0px 10px;
+}
+.contact-data {
+    color: whitesmoke;
+    font-size: 27px;
+    text-decoration: none;
+}
+.contact-data-new {
+    color: grey;
+    text-decoration: underline dotted grey;
 }
 .phone-data {
     color: whitesmoke;
@@ -211,4 +287,18 @@ footer {
     display: inline-block;
 
 }
-
+#countDown {
+    font-size: 25px;
+    color: whitesmoke
+}
+#pltRes {
+    font-size: 15px;
+    color: whitesmoke
+}
+#elka {
+    width: 50px;
+    height: 50px;
+}
+a.current-page:active {
+    color: black;
+}
