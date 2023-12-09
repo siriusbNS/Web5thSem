@@ -54,6 +54,6 @@ function generateTable() {
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('tableType').value = localStorage.getItem('tableType') || 'goodOnes';
-    document.getElementById('maxLessons').value = localStorage.getItem('maxLessons') || '';
+    document.getElementById('maxLessons').value = localStorage.getItem('quantity') || '';
     document.getElementById('language').value = localStorage.getItem('language') || '';
 });
