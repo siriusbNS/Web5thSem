@@ -1,14 +1,14 @@
-document.getElementById('tableForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+const form = document.getElementById("tableForm")
 
-    const tableType = document.getElementById('tableType').value;
-    const quantity = document.getElementById('quantity').value;
-    const language = document.getElementById('language').value;
-    localStorage.setItem('tableType', tableType);
-    localStorage.setItem('quantity', quantity);
-    localStorage.setItem('language', language);
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const data = new FormData(form);
+    for (const [name,value] of data) {
+        localStorage.setItem(name,value);
+    }
+
     const tableContainer = document.getElementById('tableContainer');
-    tableContainer.innerHTML = generateTable(tableType, quantity, language);
+    tableContainer.innerHTML = generateTable();
 
 
 
@@ -53,7 +53,8 @@ function generateTable() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('tableType').value = localStorage.getItem('tableType') || 'goodOnes';
-    document.getElementById('maxLessons').value = localStorage.getItem('maxLessons') || '';
-    document.getElementById('language').value = localStorage.getItem('language') || '';
+    let tableType = localStorage.getItem('tableType') || 'goodOnes';
+    let quantity= localStorage.getItem('maxLessons') || '';
+   let  language  = localStorage.getItem('language') || '';
+   tableContainer.innerHTML = generateTable(tableType, quantity, language);
 });
