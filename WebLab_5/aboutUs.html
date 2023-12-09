@@ -11,7 +11,6 @@
     <script src="js/script.js"></script>
     <script src="js/LoadTime.js"></script>
     <script src="js/navMenuScript.js"></script>
-
 </head>
 <body>
 
@@ -59,7 +58,7 @@
         </div>
     </div>
 </header>
-<main>
+<main style="display: flex">
     <div class="aboutus-main">
         <h1>
             О нас
@@ -68,25 +67,33 @@
         <a style="display: block;margin: 50px 0 50px;font-size: 28px;width: 500px">Наша компания - это команда опытных специалистов, специализирующихся на постройке роскошных жилых коттеджей. Мы создаем уютные и современные дома, сочетающие в себе высокое качество строительства, инновационные технологии и внимание к деталям. Наш опыт в проектировании и строительстве коттеджей позволяет нам предлагать индивидуальные решения, учитывая потребности и пожелания каждого клиента. Мы берем на себя полный цикл работ - от первоначального консультирования и проектирования до завершения строительства и благоустройства территории. Наша цель - создавать прекрасные дома, в которых счастливо жить и отдыхать, воплощая мечты о идеальном жилье для наших клиентов
         </a>
     </div>
+    <div class="feedback">
+        <h1>Наши отзывы!</h1>
+        <form id="tableForm">
+            <label for="tableType" style="font-size: 17px" >Выберите какие отзывы вы хотите увидеть:</label>
+            <select id="tableType" name="tableType">
+                <option value="goodOnes">Хорошие Отзывы</option>
+                <option value="BadOnes">Плохие Отзывы</option>
+            </select>
+
+            <label for="quantity" style="font-size: 17px">Какое Количество отзывов хотите увидеть?</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="5">
+
+            <label for="language" style="font-size: 17px">На каком языке вы хотите увидеть отзывы?</label>
+            <input type="text" id="language" name="language">
+
+            <button type="submit" style="margin-left: 40%">Показать отзывы</button>
+        </form>
+        <div id="tableContainer" class="container"></div>
+
+    </div>
+
+    <script src="js/feedBackScript.js"></script>
 
 </main>
 <footer >
 
-    <div class="footer_main">
-        <h4 style="font-size: 20px; color: whitesmoke">Контактная информация:</h4>
-        <ul id="contacnt_info">
-            <li class="textColor_2" style="display: inline;"><p>Телефон:+7(***)***-**-**</p></li>
-            <li class="textColor_2 " style="display: inline;"><p>Почта:mail@mail.ru</p></li>
-        </ul>
-        <h4 style="font-size: 20px; color: whitesmoke">Наши соцсети:</h4>
-        <ul style="display: inline-block">
-            <li class="textColor_2"><img src="imgs/VK_Compact_Logo_(2021-present).svg.png" style="max-height:30px"></li>
-            <li class="textColor_2"><img src="imgs/Telegram_logo.svg.webp" style="max-height:30px"></li>
-            <li class="textColor_2"><img src="imgs/Pinterest_Logo.svg.png" style="max-height:30px"></li>
-        </ul>
-        <h4 style="font-size: 15px; color: whitesmoke">Адрес: **************</h4>
-        <h4 style="font-size: 15px; color: whitesmoke">Время работы: Пн - Пт с 8:00 до 20:00</h4>
-    </div>
+
 </footer>
 
 </body>
